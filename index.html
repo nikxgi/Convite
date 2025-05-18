@@ -26,8 +26,8 @@
     }
     
     #scaler {
-      width: 1080px;
-      height: 1920px;
+      width: 100vw;
+      height: 100vh;
       position: fixed;
       left: 0; top: 0;
       background: #000;
@@ -37,12 +37,10 @@
 
     .container {
       position: absolute;
-      width: 1080px;
-      height: 1920px;
+      width: 100vw;
+      height: 100vw;
       top: 0;
       left: 0;
-      max-width: 100vw;
-      max-height: 100vh;
       margin: 0;
       padding: 0;
       overflow: hidden;
@@ -198,6 +196,40 @@
         linear-gradient(150deg, var(--base) 50%, var(--shadow) 50%, var(--base-dark) 53%) 0px 70px/ 120px 70px no-repeat,
         linear-gradient(148.7deg, transparent 50%, var(--shadow) 50%, var(--base) 51%) 120px 0px/ 120px 70px no-repeat;
     }
+    @media (max-width: 600px) {
+  .envelope, .envelope::before, .envelope::after {
+    width: 90vw !important;
+    height: 20vw !important;
+    min-width: 180px;
+    min-height: 80px;
+    max-width: 95vw;
+    max-height: 35vw;
+  }
+  .letter {
+    width: 80vw !important;
+    height: 18vw !important;
+    min-width: 160px;
+    min-height: 60px;
+    font-size: 4vw !important;
+  }
+  .letter .body .message {
+    font-size: 5vw !important;
+  }
+  .content {
+    width: 90vw !important;
+    height: 20vw !important;
+    min-width: 180px;
+    min-height: 80px;
+    bottom: 10vw !important;
+  }
+  #frase1, #frase2, #frase3, #frase4, #frase5, #frase6, #frase7, #fraseFinal {
+    font-size: 5vw !important;
+    width: 90vw !important;
+    max-width: 95vw !important;
+    left: 50vw !important;
+    transform: translateX(-50%) !important;
+  }
+}
 
     @keyframes pulseGlow {
       0% {
@@ -308,14 +340,14 @@
       max-width: 950px;
     }
 
-   #frase1 { font-size: 35px; top: 400px; transform: translateX(-50%); }
-    #frase2 { font-size: 19px; top: 460px; transform: translateX(-50%); }
-    #frase3 { font-size: 21px; top: 550px; transform: translateX(-50%); }
-    #frase4 { font-size: 35px; top: 450px; transform: translateX(-50%); }
-    #frase5 { font-size: 20px; top: 510px; transform: translateX(-50%); }
-    #frase6 { font-size: 20px; top: 610px; transform: translateX(-50%); }
-    #frase7 { font-size: 20px; top: 690px; transform: translateX(-50%); }
-    #fraseFinal { font-size: 25px; bottom: 70px; transform: translateX(-50%); }
+   #frase1 { font-size: 35px; top: 25vw; transform: translateX(-50%); }
+    #frase2 { font-size: 19px; top: 32vw; transform: translateX(-50%); }
+    #frase3 { font-size: 21px; top: 40vw; transform: translateX(-50%); }
+    #frase4 { font-size: 35px; top: 28vw; transform: translateX(-50%); }
+    #frase5 { font-size: 20px; top: 36vw; transform: translateX(-50%); }
+    #frase6 { font-size: 20px; top: 44vw; transform: translateX(-50%); }
+    #frase7 { font-size: 20px; top: 52vw; transform: translateX(-50%); }
+    #fraseFinal { font-size: 25px; bottom: 10vw; transform: translateX(-50%); }
 
   </style>
 </head>
@@ -467,4 +499,3 @@
   </script>
 </body>
 </html>
-
