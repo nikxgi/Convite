@@ -158,27 +158,6 @@
       box-shadow: 0 0 12px 2px var(--pulse-glow);
       transition: box-shadow 0.3s ease-in-out;
     }
-    @media (max-width: 1080px), (max-height: 1920px) {
-  #scaler {
-    /* Calcula o fator de escala baseado na tela */
-    transform: scale(
-      min(
-        calc(100vw / 1080),
-        calc(100vh / 1920)
-      )
-    );
-    left: 50%;
-    top: 50%;
-    transform-origin: top left;
-    position: fixed;
-    /* Centraliza na tela */
-    margin-left: calc((100vw - 1080px * min(100vw/1080, 100vh/1920)) / 2);
-    margin-top: calc((100vh - 1920px * min(100vw/1080, 100vh/1920)) / 2);
-  }
-  body, html {
-    overflow: auto;
-  }
-}
 
     @keyframes pulse {
       0% {
@@ -219,6 +198,53 @@
         linear-gradient(150deg, var(--base) 50%, var(--shadow) 50%, var(--base-dark) 53%) 0px 70px/ 120px 70px no-repeat,
         linear-gradient(148.7deg, transparent 50%, var(--shadow) 50%, var(--base) 51%) 120px 0px/ 120px 70px no-repeat;
     }
+    @media (max-width: 600px) {
+  .envelope, .envelope::before, .envelope::after {
+    width: 160px !important;
+    height: 90px !important;
+    min-width: 120px;
+    min-height: 60px;
+    max-width: 95vw;
+    max-height: 30vw;
+  }
+  .envelope::before {
+    border-top: 60px solid #7bade6f5 !important;
+    border-left: 80px solid transparent !important;
+    border-right: 80px solid transparent !important;
+  }
+  .envelope::after {
+    width: 160px !important;
+    height: 90px !important;
+  }
+  .letter {
+    width: 140px !important;
+    height: 70px !important;
+    font-size: 13px !important;
+  }
+  .letter .body {
+    width: 120px !important;
+    height: 50px !important;
+  }
+  .letter .body .message {
+    font-size: 16px !important;
+  }
+  .content {
+    width: 160px !important;
+    height: 90px !important;
+    bottom: 40px !important;
+  }
+  #frase1, #frase2, #frase3, #frase4, #frase5, #frase6, #frase7, #fraseFinal {
+    font-size: 16px !important;
+    width: 90vw !important;
+    max-width: 95vw !important;
+    left: 50vw !important;
+    transform: translateX(-50%) !important;
+  }
+  .pulse-icon {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
 
     @keyframes pulseGlow {
       0% {
@@ -341,7 +367,6 @@
   </style>
 </head>
 <body>
-  <div id="scaler">
   <div class="container">
     <div id="tela1" class="tela ativa">
       <iframe class="bg" src="https://www.canva.com/design/DAGmxrNUco4/Dim7apfdATOUxmfnvtFQsg/view?embed" allowfullscreen frameborder="0" onload="document.querySelector('.content').classList.add('mostrar-envelope')"></iframe>
@@ -378,7 +403,6 @@
         <div class="shadow"></div>
       </div>
     </div>
-  </div>
 
     <div id="tela2" class="tela">
       <iframe class="bg" id="iframeConvite" src="" allowfullscreen frameborder="0"></iframe>
