@@ -198,51 +198,86 @@
         linear-gradient(150deg, var(--base) 50%, var(--shadow) 50%, var(--base-dark) 53%) 0px 70px/ 120px 70px no-repeat,
         linear-gradient(148.7deg, transparent 50%, var(--shadow) 50%, var(--base) 51%) 120px 0px/ 120px 70px no-repeat;
     }
+
     @media (max-width: 600px) {
-  .envelope, .envelope::before, .envelope::after {
-    width: 160px !important;
-    height: 90px !important;
-    min-width: 120px;
-    min-height: 60px;
-    max-width: 95vw;
-    max-height: 30vw;
+  /* Envelope e carta proporcionais e centralizados */
+  .envelope {
+    width: 180px !important;
+    height: 105px !important;
+    left: 50% !important;
+    top: -110px !important;
+    transform: translateX(-50%) !important;
+    z-index: 10;
   }
   .envelope::before {
-    border-top: 60px solid #7bade6f5 !important;
-    border-left: 80px solid transparent !important;
-    border-right: 80px solid transparent !important;
+    width: 180px !important;
+    border-top: 67px solid #7bade6f5 !important;
+    border-left: 90px solid transparent !important;
+    border-right: 90px solid transparent !important;
+    left: 0 !important;
+    top: 0 !important;
+    z-index: 30;
   }
   .envelope::after {
-    width: 160px !important;
-    height: 90px !important;
+    width: 180px !important;
+    height: 105px !important;
+    left: 0 !important;
+    top: 0 !important;
+    z-index: 25;
+    background:
+      linear-gradient(30deg, var(--base-dark) 47%, var(--shadow) 50%, var(--base) 50%) 90px 52.5px/ 90px 52.5px no-repeat,
+      linear-gradient(31deg, var(--base) 49%, var(--shadow) 50%, transparent 50%) 0px 0px/ 91px 52.5px no-repeat,
+      linear-gradient(150deg, var(--base) 50%, var(--shadow) 50%, var(--base-dark) 53%) 0px 52.5px/ 90px 52.5px no-repeat,
+      linear-gradient(148.7deg, transparent 50%, var(--shadow) 50%, var(--base) 51%) 90px 0px/ 90px 52.5px no-repeat;
   }
   .letter {
-    width: 140px !important;
-    height: 70px !important;
+    width: 150px !important;
+    height: 80px !important;
     font-size: 13px !important;
+    top: -90px !important;
+    left: 15px !important;
+    z-index: 15 !important;
   }
   .letter .body {
-    width: 120px !important;
-    height: 50px !important;
-  }
-  .letter .body .message {
-    font-size: 16px !important;
+    width: 130px !important;
+    height: 60px !important;
   }
   .content {
-    width: 160px !important;
-    height: 90px !important;
-    bottom: 40px !important;
-  }
-  #frase1, #frase2, #frase3, #frase4, #frase5, #frase6, #frase7, #fraseFinal {
-    font-size: 16px !important;
-    width: 90vw !important;
-    max-width: 95vw !important;
-    left: 50vw !important;
+    width: 180px !important;
+    height: 105px !important;
+    bottom: 60px !important;
+    left: 50% !important;
     transform: translateX(-50%) !important;
   }
+  #frase1, #frase4, #fraseFinal {
+    width: 95vw !important;
+    max-width: 98vw !important;
+    left: 50vw !important;
+    transform: translateX(-50%) !important;
+    line-height: 1.3 !important;
+  }
+  /* Frases proporcionais e espaçadas */
+   #frase2, #frase3, #frase5, #frase6, #frase7 {
+    font-size: 20px !important;
+    width: 95vw !important;
+    max-width: 98vw !important;
+    left: 50vw !important;
+    transform: translateX(-50%) !important;
+    line-height: 1.3 !important;
+  }
+  #frase1 { top: 450px !important; }
+  #frase2 { top: 510px !important; }
+  #frase3 { top: 610px !important; }
+  #frase4 { top: 500px !important; }
+  #frase5 { top: 550px !important; }
+  #frase6 { top: 640px !important; }
+  #frase7 { top: 706px !important; }
+  #fraseFinal { bottom: 100px !important; }
+
+  /* Pulse icons proporcionais */
   .pulse-icon {
-    width: 16px !important;
-    height: 16px !important;
+    width: 18px !important;
+    height: 18px !important;
   }
 }
 
@@ -393,13 +428,13 @@
       <div id="frase3">CLIQUE AQUI PARA ABRIR</div>
 
       <div class="content" onclick="abrirConvite()">
-        <div class="envelope"></div>
         <div class="letter">
           <div class="body">
             <span class="close" onclick="event.stopPropagation(); fecharConvite()">x</span>
             <div class="message"></div>
           </div>
         </div>
+        <div class="envelope"></div>
         <div class="shadow"></div>
       </div>
     </div>
