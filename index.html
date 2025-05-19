@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Convite de Padrinhos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Manjari&display=swap" rel="stylesheet">
   <style>
     :root {
       --base: #5fa3f5;
@@ -223,14 +222,31 @@
     width: 130px !important;
     height: 60px !important;
   }
-  #frase1 { top: 45vh !important; font-size: 28px !important; }
-  #frase2 { top: 50vh !important; font-size: 18px !important; }
-  #frase3 { top: 60vh !important; font-size: 18px !important; }
-  #frase4 { top: 50vh !important; font-size: 28px !important; }
-  #frase5 { top: 55vh !important; font-size: 18px !important; }
-  #frase6 { top: 60vh !important; font-size: 18px !important; }
-  #frase7 { top: 71vh !important; font-size: 18px !important; }
-  #fraseFinal { bottom: 14vh !important; font-size: 24px !important; }
+  #frase1, #frase4, #fraseFinal {
+    font-size: clamp(22px, 5.8vw, 25px) !important;
+    width: 90vw !important;
+    max-width: 98vw !important;
+    word-break: break-word;
+    white-space: normal;
+    padding: 0 2vw;
+  }
+
+  #frase2, #frase3, #frase5, #frase6, #frase7 {
+    font-size: clamp(12px, 4.0vw, 23px) !important;
+    width: 90vw !important;
+    max-width: 98vw !important;
+    word-break: break-word;
+    white-space: normal;
+    padding: 0 2vw;
+  }
+  #frase1 { top: 45vh !important }
+  #frase2 { top: 50vh !important }
+  #frase3 { top: 59vh !important }
+  #frase4 { top: 53vh !important }
+  #frase5 { top: 59vh !important }
+  #frase6 { top: 67vh !important }
+  #frase7 { top: 73vh !important }
+  #fraseFinal { bottom: 14vh !important }
 }
 
     @keyframes pulseGlow {
@@ -330,7 +346,7 @@
       font-size: 48px;
       text-align: center;
       transform: translateX(-50%);
-      font-family: 'Manjari', sans-serif;
+      font-family: sans-serif;
       font-weight: 700;
       color: #fff;
       text-shadow: -2px 2px 0 #0926a4;
@@ -376,7 +392,7 @@
 
       <!-- Frases que aparecem no começo -->
       <div id="frase1">O Pequeno Antony</div>
-      <div id="frase2">Está te enviando nesse envelope uma notícia<br> muito especial, afinal, notícias boas<br> também chegam cedo!</div>
+      <div id="frase2">Está te enviando nesse envelope uma notícia muito especial, afinal, notícias boas também chegam cedo!</div>
       <div id="frase3">CLIQUE AQUI PARA ABRIR</div>
 
       <div class="content" onclick="abrirConvite()">
@@ -395,9 +411,9 @@
       <iframe class="bg" id="iframeConvite" src="" allowfullscreen frameborder="0"></iframe>
       <div id="fraseFinal">Você aceita ser meu padrinho?</div>
       <div id="frase4">TITIO Sérgio</div>
-      <div id="frase5">Mamãe e Papai me disseram que os<br> PADRINHOS são anjos com quem<br> posso RIR e CHORAR.</div>
-      <div id="frase6">Que me manterão em pé quando<br> minhas asas não souberem como voar.</div>
-      <div id="frase7">Por isso com muito AMOR, escolheram<br> você para ser um anjo na minha vida.</div>
+      <div id="frase5">Mamãe e Papai me disseram que os PADRINHOS são anjos com quem posso RIR e CHORAR.</div>
+      <div id="frase6">Que me manterão em pé quando minhas asas não souberem como voar.</div>
+      <div id="frase7">Por isso com muito AMOR, escolheram você para ser um anjo na minha vida.</div>
     </div>
   </div>
 
