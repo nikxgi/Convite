@@ -16,13 +16,13 @@
     }
     
     html, body {
-      height: 100%;
-      width: 100%;
-      margin: 0;
-      padding: 0;
+      height: 100vh;
+      width: 100vw;
       overflow: hidden;
       background: #000;
       font-family: sans-serif;
+      margin: 0;
+      padding: 0;
     }
     
     #scaler {
@@ -36,25 +36,20 @@
     }
 
     .container {
+      position: absolute;
       width: 1080px;
       height: 1920px;
-      position: fixed;
-      left: 0; top: 0;
-      background: #000;
+      top: 0;
+      left: 0;
+      max-width: 100vw;
+      max-height: 100vh;
+      margin: 0;
+      padding: 0;
       overflow: hidden;
-      transform-origin: top left;
-    }
-
-    @media (max-width: 1080px), (max-height: 1920px) {
-      .container {
-        /* Calcula o fator de escala baseado na menor dimensão da tela */
-        transform: scale(
-          min(
-            calc(100vw / 1080),
-            calc(100vh / 1920)
-          )
-        );
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
     }
 
     .tela {
@@ -140,7 +135,7 @@
       right: 0;
       top: 0;
       font-size: 24px;
-      font-family: 'Manjari', sans-serif;
+      font-family: sans-serif;
       cursor: pointer;
       user-select: none;
     }
@@ -149,7 +144,7 @@
       font-size: 30px;
       font-weight: 900;
       text-align: center;
-      font-family: 'Great Vibes', cursive;
+      font-family: sans-serif;
     }
 
     .envelope {
@@ -204,92 +199,9 @@
         linear-gradient(148.7deg, transparent 50%, var(--shadow) 50%, var(--base) 51%) 120px 0px/ 120px 70px no-repeat;
     }
 
-    @media (max-width: 600px) {
-  /* Envelope e carta proporcionais e centralizados */
-  .envelope {
-    width: 180px !important;
-    height: 105px !important;
-    left: 50% !important;
-    top: 18vh !important;
-    transform: translateX(-50%) !important;
-    z-index: 10;
-  }
-  .envelope::before {
-    width: 180px !important;
-    border-top: 67px solid #7bade6f5 !important;
-    border-left: 90px solid transparent !important;
-    border-right: 90px solid transparent !important;
-    left: 0 !important;
-    top: 0 !important;
-    z-index: 30;
-  }
-  .envelope::after {
-    width: 180px !important;
-    height: 105px !important;
-    left: 0 !important;
-    top: 0 !important;
-    z-index: 25;
-    background:
-      linear-gradient(30deg, var(--base-dark) 47%, var(--shadow) 50%, var(--base) 50%) 90px 52.5px/ 90px 52.5px no-repeat,
-      linear-gradient(31deg, var(--base) 49%, var(--shadow) 50%, transparent 50%) 0px 0px/ 91px 52.5px no-repeat,
-      linear-gradient(150deg, var(--base) 50%, var(--shadow) 50%, var(--base-dark) 53%) 0px 52.5px/ 90px 52.5px no-repeat,
-      linear-gradient(148.7deg, transparent 50%, var(--shadow) 50%, var(--base) 51%) 90px 0px/ 90px 52.5px no-repeat;
-  }
-  .letter {
-    width: 150px !important;
-    height: 80px !important;
-    font-size: 13px !important;
-    top: -90px !important;
-    left: 15px !important;
-    z-index: 15 !important;
-  }
-  .letter .body {
-    width: 130px !important;
-    height: 60px !important;
-  }
-  .content {
-    width: 180px !important;
-    height: 105px !important;
-    bottom: auto !important;
-    top: 18vh !important; 
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-  }
-  #frase1, #frase4, #fraseFinal {
-    width: 95vw !important;
-    max-width: 98vw !important;
-    left: 50vw !important;
-    transform: translateX(-50%) !important;
-    line-height: 1.3 !important;
-  }
-  /* Frases proporcionais e espaçadas */
-   #frase2, #frase3, #frase5, #frase6, #frase7 {
-    font-size: 20px !important;
-    width: 95vw !important;
-    max-width: 98vw !important;
-    left: 50vw !important;
-    transform: translateX(-50%) !important;
-    line-height: 1.3 !important;
-  }
-  #frase1 { top: 7vh !important; font-size: 22px !important; }
-  #frase2 { top: 13vh !important; font-size: 15px !important; }
-  #frase3 { top: 32vh !important; font-size: 16px !important; }
-  #frase4 { top: 7vh !important; font-size: 22px !important; }
-  #frase5 { top: 13vh !important; font-size: 15px !important; }
-  #frase6 { top: 19vh !important; font-size: 15px !important; }
-  #frase7 { top: 25vh !important; font-size: 15px !important; }
-  #fraseFinal { bottom: 7vh !important; font-size: 18px !important; }
-
-  /* Pulse icons proporcionais */
-  .pulse-icon {
-    width: 18px !important;
-    height: 18px !important;
-  }
-}
-
 @media (max-width: 600px) {
   .content {
-    top: 65vh !important; /* envelope mais para baixo */
+    top: 64vh !important; /* envelope mais para baixo */
     bottom: auto !important;
   }
   .envelope {
@@ -316,7 +228,7 @@
   #frase3 { top: 60vh !important; font-size: 18px !important; }
   #frase4 { top: 50vh !important; font-size: 28px !important; }
   #frase5 { top: 55vh !important; font-size: 18px !important; }
-  #frase6 { top: 64vh !important; font-size: 18px !important; }
+  #frase6 { top: 60vh !important; font-size: 18px !important; }
   #frase7 { top: 71vh !important; font-size: 18px !important; }
   #fraseFinal { bottom: 14vh !important; font-size: 24px !important; }
 }
@@ -468,13 +380,13 @@
       <div id="frase3">CLIQUE AQUI PARA ABRIR</div>
 
       <div class="content" onclick="abrirConvite()">
+        <div class="envelope"></div>
         <div class="letter">
           <div class="body">
             <span class="close" onclick="event.stopPropagation(); fecharConvite()">x</span>
             <div class="message"></div>
           </div>
         </div>
-        <div class="envelope"></div>
         <div class="shadow"></div>
       </div>
     </div>
