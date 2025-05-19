@@ -200,7 +200,9 @@
 
 @media (max-width: 600px) {
   .content {
-    top: 64vh !important; /* envelope mais para baixo */
+    top: 62vh !important; /* envelope mais para baixo */
+    width: min(80vw, 260px);
+    height: min(40vw, 120px);
     bottom: auto !important;
   }
   .envelope {
@@ -210,17 +212,23 @@
     margin: 0 auto !important;
     animation: pulse 2s infinite;
   }
+  .envelope::before {
+   z-index: 30;
+   }
+   .envelope::after {
+   z-index: 25;
+   }
   .letter {
-    top: 58px !important;   /* agora fica dentro do envelope */
-    left: 8px !important;
-    z-index: 15 !important;
-    width: 150px !important;
-    height: 80px !important;
-    font-size: 13px !important;
+    top: 15px !important;   /* agora fica dentro do envelope */
+    left: 40px !important;
+    z-index: 15;
+    width: 190px !important;
+    height: 120px !important;
+    font-size: 80px !important;
   }
   .letter .body {
-    width: 130px !important;
-    height: 60px !important;
+    width: 160px !important;
+    height: 90px !important;
   }
   #frase1, #frase4, #fraseFinal {
     font-size: clamp(22px, 5.8vw, 25px) !important;
@@ -232,7 +240,7 @@
   }
 
   #frase2, #frase3, #frase5, #frase6, #frase7 {
-    font-size: clamp(12px, 4.0vw, 23px) !important;
+    font-size: clamp(11px, 3.8vw, 20px) !important;
     width: 90vw !important;
     max-width: 98vw !important;
     word-break: break-word;
@@ -244,9 +252,9 @@
   #frase3 { top: 59vh !important }
   #frase4 { top: 53vh !important }
   #frase5 { top: 59vh !important }
-  #frase6 { top: 67vh !important }
+  #frase6 { top: 66vh !important }
   #frase7 { top: 73vh !important }
-  #fraseFinal { bottom: 14vh !important }
+  #fraseFinal { bottom: 18vh !important }
 }
 
     @keyframes pulseGlow {
@@ -354,8 +362,10 @@
       opacity: 0;
       animation: pulseGlow 2s infinite;
       line-height: 1.2;
-      width: 900px;
-      max-width: 950px;
+      width: 90vw;
+      max-width: 98vw;
+      word-break: break-word;
+      white-space: normal;
     }
 
    #frase1 { font-size: 35px; top: 400px; transform: translateX(-50%); }
