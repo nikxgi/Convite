@@ -45,9 +45,6 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       background: #000;
     }
 
@@ -230,6 +227,7 @@
     width: 160px !important;
     height: 90px !important;
   }
+ 
   #frase1, #frase4, #fraseFinal {
     font-size: clamp(22px, 5.8vw, 25px) !important;
     width: 90vw !important;
@@ -240,9 +238,9 @@
   }
 
   #frase2, #frase3, #frase5, #frase6, #frase7 {
-    font-size: clamp(11px, 3.8vw, 20px) !important;
-    width: 90vw !important;
-    max-width: 98vw !important;
+    font-size: clamp(10px, 3.6vw, 19px) !important;
+    width: 80vw !important;
+    max-width: 90vw !important;
     word-break: break-word;
     white-space: normal;
     padding: 0 2vw;
@@ -252,9 +250,9 @@
   #frase3 { top: 59vh !important }
   #frase4 { top: 53vh !important }
   #frase5 { top: 59vh !important }
-  #frase6 { top: 66vh !important }
-  #frase7 { top: 73vh !important }
-  #fraseFinal { bottom: 18vh !important }
+  #frase6 { top: 67vh !important }
+  #frase7 { top: 74vh !important }
+  #fraseFinal { bottom: 14vh !important }
 }
 
     @keyframes pulseGlow {
@@ -292,15 +290,6 @@
         transform: scale(1);
       }
     }
-    .pulse-icon {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  animation: pulseEffect 2s infinite, glowEffect 3s infinite;
-  pointer-events: none;
-  z-index: 5;
-  opacity: 0.9;
-}
 
 @keyframes pulseEffect {
   0% {
@@ -362,20 +351,22 @@
       opacity: 0;
       animation: pulseGlow 2s infinite;
       line-height: 1.2;
-      width: 90vw;
-      max-width: 98vw;
+      width: 95vw;
+      max-width: 370px;      /* limite para não passar do envelope/imagem */
+      min-width: 180px;  
       word-break: break-word;
       white-space: normal;
+      padding: 0 2vw;
     }
 
    #frase1 { font-size: 35px; top: 400px; transform: translateX(-50%); }
     #frase2 { font-size: 19px; top: 460px; transform: translateX(-50%); }
     #frase3 { font-size: 21px; top: 550px; transform: translateX(-50%); }
-    #frase4 { font-size: 35px; top: 450px; transform: translateX(-50%); }
-    #frase5 { font-size: 20px; top: 510px; transform: translateX(-50%); }
-    #frase6 { font-size: 20px; top: 610px; transform: translateX(-50%); }
-    #frase7 { font-size: 20px; top: 690px; transform: translateX(-50%); }
-    #fraseFinal { font-size: 25px; bottom: 70px; transform: translateX(-50%); }
+    #frase4 { font-size: 35px; top: 460px; transform: translateX(-50%); }
+    #frase5 { font-size: 20px; top: 520px; transform: translateX(-50%); }
+    #frase6 { font-size: 20px; top: 615px; transform: translateX(-50%); }
+    #frase7 { font-size: 20px; top: 700px; transform: translateX(-50%); }
+    #fraseFinal { font-size: 25px; bottom: 100px; transform: translateX(-50%); }
 
   </style>
 </head>
@@ -383,23 +374,6 @@
   <div class="container">
     <div id="tela1" class="tela ativa">
       <iframe class="bg" src="https://www.canva.com/design/DAGmxrNUco4/Dim7apfdATOUxmfnvtFQsg/view?embed" allowfullscreen frameborder="0" onload="document.querySelector('.content').classList.add('mostrar-envelope')"></iframe>
-       <!-- Ícones flutuantes -->
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=LuXk2sw4rJVF&format=png&color=000000" style="top: 15%; left: 38%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=LuXk2sw4rJVF&format=png&color=000000" style="top: 38%; left: 54%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=LuXk2sw4rJVF&format=png&color=000000" style="top: 1%; left: 47%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=lDNZkZbEIHE7&format=png&color=000000" style="top: 23%; left: 61%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=lDNZkZbEIHE7&format=png&color=000000" style="top: 37%; left: 58%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=lDNZkZbEIHE7&format=png&color=000000" style="top: 17%; left: 42%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=lDNZkZbEIHE7&format=png&color=000000" style="top: 39%; left: 38%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=lDNZkZbEIHE7&format=png&color=000000" style="top: 7%; left: 38%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=lDNZkZbEIHE7&format=png&color=000000" style="top: 10%; left: 55%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=LuXk2sw4rJVF&format=png&color=000000" style="top: 44%; left: 61%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=LuXk2sw4rJVF&format=png&color=000000" style="top: 64%; left: 39%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=LuXk2sw4rJVF&format=png&color=000000" style="top: 74%; left: 61%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=LuXk2sw4rJVF&format=png&color=000000" style="top: 32%; left: 40%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=LuXk2sw4rJVF&format=png&color=000000" style="top: 22%; left: 58%;">
-<img class="pulse-icon" src="https://img.icons8.com/?size=100&id=LuXk2sw4rJVF&format=png&color=000000" style="top: 12%; left: 61%;">
-
       <!-- Frases que aparecem no começo -->
       <div id="frase1">O Pequeno Antony</div>
       <div id="frase2">Está te enviando nesse envelope uma notícia muito especial, afinal, notícias boas também chegam cedo!</div>
